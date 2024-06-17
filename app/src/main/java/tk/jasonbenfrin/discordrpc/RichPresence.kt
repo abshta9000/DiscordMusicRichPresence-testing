@@ -300,6 +300,7 @@ class RichPresence : Fragment() {
     }
 
     private fun updateLayout(view: View) {
+//        whats making this?
         val file = File(requireContext().cacheDir, "activity")
         if (file.exists()) {
             val json = JsonParser.parseString(file.readText(Charsets.UTF_8)).asJsonObject

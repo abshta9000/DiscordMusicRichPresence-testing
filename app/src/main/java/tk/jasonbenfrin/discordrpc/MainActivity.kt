@@ -10,6 +10,7 @@ import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.text.format.DateFormat
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
@@ -237,6 +238,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+//        function that actually sends teh payload? edit:nvm
         fun identify(webSocket: WebSocket, context: Context) {
             val properties = JsonObject()
             properties.addProperty("os","linux")
@@ -355,6 +357,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     file.writeText(json.toString())
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {}
             }
             afk.setOnCheckedChangeListener { _, bool ->
@@ -362,6 +365,7 @@ class MainActivity : AppCompatActivity() {
                 else json.addProperty("afk", false)
                 file.writeText(json.toString())
             }
+
         }
 
         private fun resetTime(json : JsonObject, context: Context) : JsonObject {
